@@ -98,6 +98,7 @@
     background: #f7f7f7;
     padding: 10px 15px 30px 15px;
     word-break: break-all;
+    line-height: 20px;
 }
 
 .mainContent .bottom {

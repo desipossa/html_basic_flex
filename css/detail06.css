@@ -65,6 +65,22 @@
     height: 100%;
 }
 
+.main_bar {
+    position: relative;
+}
+
+.main_bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 60px;
+    background: #8cafdd;
+    transform: translate(0, -50%);
+
+}
+
 
 
 
@@ -199,6 +215,11 @@
     margin: 0 0 10px 0;
     font-size: 22px;
     color: #111;
+}
+
+.mainInfo .main_list .case .right p {
+    font-size: 15px;
+    line-height: 25px;
 }
 
 .mainInfo .main_list .case .left strong {

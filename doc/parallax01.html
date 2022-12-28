@@ -31,20 +31,32 @@
                 </ul>
             </nav>
         </header>
-        <main>
+        <main class="main">
+            <div class="pr">
+                <div class="sticky">
+                    <ul>
+                        <li>menu01</li>
+                        <li>menu02</li>
+                        <li>menu03</li>
+                    </ul>
 
-            <div class="sticky">
-                <span>i am sticky</span>
+                    <div class="ggg">
+                        <figure>01</figure>
+                        <figure>02</figure>
+                        <figure>03</figure>
+                    </div>
+                </div>
+                <section class="sec" data-parallax="scroll" data-image-src="../img/main_visual03.jpg">
+                </section>
+                <section class="sec" data-parallax="scroll" data-image-src="../img/main_visual01.jpg">
+                </section>
+                <section class="sec m02">
+                    <span>02</span>
+                </section>
             </div>
-            <section class="sec" data-parallax="scroll" data-image-src="../img/main_visual03.jpg">
-
-            </section>
-            <section class="sec" data-parallax="scroll" data-image-src="../img/main_visual01.jpg">
-
-            </section>
-            <section class="sec m02">
-                <span>02</span>
-            </section>
+            <div class="bottom">
+                ddd
+            </div>
         </main>
         <footer id="footer">
             &copy; 20221228 lee.
@@ -54,6 +66,24 @@
     <script>
         $(function () {
             $('.m02').parallax({ imageSrc: '../img/main_visual02.jpg' });
+
+            $(window).on('scroll', function () {
+                var sct = $(window).scrollTop();
+                var mH = $('.main').outerHeight(true);
+                var sH = $('.sec').height();
+                console.log(sct, mH, sH)
+
+                var idx = 0;
+                for (i = 0; i < $('.sec').size(); i++) {
+                    if (sct > sH * i) { idx = i }
+                }
+                // if (sct > sH) { idx = 1 }
+                // if (sct > sH * 2) { idx = 2 }
+
+                $('.sticky li').eq(idx).addClass('on').siblings().removeClass('on');
+                $('.ggg figure').eq(idx).fadeIn().siblings().fadeOut()
+
+            })
         })
     </script>
 

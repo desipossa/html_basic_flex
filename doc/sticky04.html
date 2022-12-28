@@ -68,9 +68,8 @@
 
                 var allH = 0;
                 for (i = 0; i < idx; i++) {
-                    allH += $('.sec').eq(idx).innerHeight();
+                    allH += $('.sec').eq(i).innerHeight();
                 }
-
                 console.log(allH);
                 $('html, body').animate({ scrollTop: allH })
             });
